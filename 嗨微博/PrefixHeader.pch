@@ -1,0 +1,42 @@
+//
+//  PrefixHeader.pch
+//  嗨微博
+//
+//  Created by 胡明正 on 2017/4/4.
+//  Copyright © 2017年 huhuge. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#import "NSString+Extension.h"
+#import "NSDate+Extension.h"
+#import "UIView+Extension.h"
+#import "UIBarButtonItem+Extension.h"
+#import "UIWindow+Extension.h"
+#import "AFNetworking.h"
+#import "MBProgressHUD+MJ.h"
+#import "UIImageView+WebCache.h"
+
+//打印
+#if DEBUG
+#define HLog(fmt,...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ## __VA_ARGS__);
+#else
+#define HLog(...)
+#endif
+
+//RGB颜色
+#define HHRGBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define HHRGBAColor(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+
+//随机色
+#define HHRandomColor HHRGBColor(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))
+
+//**************屏幕尺寸相关************************//
+#define ScreenW [UIScreen mainScreen].bounds.size.width
+#define ScreenH [UIScreen mainScreen].bounds.size.height
+
+
+#endif /* PrefixHeader_pch */
