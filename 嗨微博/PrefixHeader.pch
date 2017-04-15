@@ -19,6 +19,11 @@
 #import "MBProgressHUD+MJ.h"
 #import "UIImageView+WebCache.h"
 
+
+
+//通知
+#define HHNotificationCenter [NSNotificationCenter defaultCenter]
+
 //打印
 #if DEBUG
 #define HLog(fmt,...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ## __VA_ARGS__);

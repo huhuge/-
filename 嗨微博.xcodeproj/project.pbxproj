@@ -10,6 +10,13 @@
 		AE1683D41E93480600C6E393 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE1683D31E93480600C6E393 /* images.xcassets */; };
 		AE1683E21E93480600C6E393 /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1683E11E93480600C6E393 /* ___Tests.m */; };
 		AE1683ED1E93480600C6E393 /* ___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1683EC1E93480600C6E393 /* ___UITests.m */; };
+		AE190BAA1EA0701C00D42A02 /* HHComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE190BA91EA0701C00D42A02 /* HHComposePhotosView.m */; };
+		AE190BAD1EA0ADA900D42A02 /* HHEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = AE190BAC1EA0ADA900D42A02 /* HHEmotionKeyboard.m */; };
+		AE190BB01EA0AF9400D42A02 /* HHEmotionTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AE190BAF1EA0AF9400D42A02 /* HHEmotionTabBar.m */; };
+		AE190BB31EA0B05C00D42A02 /* HHEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE190BB21EA0B05C00D42A02 /* HHEmotionListView.m */; };
+		AE36068F1EA20F38004AB867 /* HHEmotionTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE36068E1EA20F38004AB867 /* HHEmotionTabBarButton.m */; };
+		AE3606941EA21B12004AB867 /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = AE3606931EA21B12004AB867 /* EmotionIcons */; };
+		AE3606971EA23ADA004AB867 /* HHEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3606961EA23ADA004AB867 /* HHEmotion.m */; };
 		AEAA7F611E98ED62003EC9DF /* HHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAA7F601E98ED62003EC9DF /* HHUser.m */; };
 		AEAA7F641E98ED7C003EC9DF /* HHStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAA7F631E98ED7C003EC9DF /* HHStatus.m */; };
 		AEAA7F7D1E990060003EC9DF /* MJArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAA7F671E990060003EC9DF /* MJArgument.m */; };
@@ -73,6 +80,9 @@
 		AEF884F81E9766E5002E0CED /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF884F71E9766E5002E0CED /* UIWindow+Extension.m */; };
 		AEF884FA1E977EC0002E0CED /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF884F91E977EC0002E0CED /* Foundation+Log.m */; };
 		AEF885001E978F7A002E0CED /* HHTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF884FF1E978F7A002E0CED /* HHTitleButton.m */; };
+		AEF8FF581E9F4A6200366C9E /* HHComposeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF8FF571E9F4A6200366C9E /* HHComposeVC.m */; };
+		AEF8FF5B1E9F4AD000366C9E /* HHTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF8FF5A1E9F4AD000366C9E /* HHTextView.m */; };
+		AEF8FF5E1E9F640700366C9E /* HHComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF8FF5D1E9F640700366C9E /* HHComposeToolbar.m */; };
 		AEF961871E9486F500B4A6A2 /* HHTitleMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF961861E9486F500B4A6A2 /* HHTitleMenuVC.m */; };
 		AEF9618A1E94C54400B4A6A2 /* HHTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF961891E94C54400B4A6A2 /* HHTabbar.m */; };
 		AEFAFD321E95CFE7008230FF /* HHNewFeatureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFAFD311E95CFE7008230FF /* HHNewFeatureVC.m */; };
@@ -115,6 +125,19 @@
 		AE1683EC1E93480600C6E393 /* ___UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___UITests.m"; sourceTree = "<group>"; };
 		AE1683EE1E93480600C6E393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE1684001E9350F600C6E393 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		AE190BA81EA0701C00D42A02 /* HHComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHComposePhotosView.h; sourceTree = "<group>"; };
+		AE190BA91EA0701C00D42A02 /* HHComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHComposePhotosView.m; sourceTree = "<group>"; };
+		AE190BAB1EA0ADA900D42A02 /* HHEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmotionKeyboard.h; sourceTree = "<group>"; };
+		AE190BAC1EA0ADA900D42A02 /* HHEmotionKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionKeyboard.m; sourceTree = "<group>"; };
+		AE190BAE1EA0AF9400D42A02 /* HHEmotionTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmotionTabBar.h; sourceTree = "<group>"; };
+		AE190BAF1EA0AF9400D42A02 /* HHEmotionTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionTabBar.m; sourceTree = "<group>"; };
+		AE190BB11EA0B05C00D42A02 /* HHEmotionListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmotionListView.h; sourceTree = "<group>"; };
+		AE190BB21EA0B05C00D42A02 /* HHEmotionListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionListView.m; sourceTree = "<group>"; };
+		AE36068D1EA20F38004AB867 /* HHEmotionTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmotionTabBarButton.h; sourceTree = "<group>"; };
+		AE36068E1EA20F38004AB867 /* HHEmotionTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionTabBarButton.m; sourceTree = "<group>"; };
+		AE3606931EA21B12004AB867 /* EmotionIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EmotionIcons; sourceTree = "<group>"; };
+		AE3606951EA23ADA004AB867 /* HHEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmotion.h; sourceTree = "<group>"; };
+		AE3606961EA23ADA004AB867 /* HHEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotion.m; sourceTree = "<group>"; };
 		AEAA7F5F1E98ED62003EC9DF /* HHUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHUser.h; sourceTree = "<group>"; };
 		AEAA7F601E98ED62003EC9DF /* HHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHUser.m; sourceTree = "<group>"; };
 		AEAA7F621E98ED7C003EC9DF /* HHStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHStatus.h; sourceTree = "<group>"; };
@@ -238,6 +261,12 @@
 		AEF884F91E977EC0002E0CED /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		AEF884FE1E978F7A002E0CED /* HHTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHTitleButton.h; sourceTree = "<group>"; };
 		AEF884FF1E978F7A002E0CED /* HHTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHTitleButton.m; sourceTree = "<group>"; };
+		AEF8FF561E9F4A6200366C9E /* HHComposeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHComposeVC.h; sourceTree = "<group>"; };
+		AEF8FF571E9F4A6200366C9E /* HHComposeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHComposeVC.m; sourceTree = "<group>"; };
+		AEF8FF591E9F4AD000366C9E /* HHTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHTextView.h; sourceTree = "<group>"; };
+		AEF8FF5A1E9F4AD000366C9E /* HHTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHTextView.m; sourceTree = "<group>"; };
+		AEF8FF5C1E9F640700366C9E /* HHComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHComposeToolbar.h; sourceTree = "<group>"; };
+		AEF8FF5D1E9F640700366C9E /* HHComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHComposeToolbar.m; sourceTree = "<group>"; };
 		AEF961851E9486F500B4A6A2 /* HHTitleMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HHTitleMenuVC.h; path = ../Controller/HHTitleMenuVC.h; sourceTree = "<group>"; };
 		AEF961861E9486F500B4A6A2 /* HHTitleMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HHTitleMenuVC.m; path = ../Controller/HHTitleMenuVC.m; sourceTree = "<group>"; };
 		AEF961881E94C54400B4A6A2 /* HHTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHTabbar.h; sourceTree = "<group>"; };
@@ -322,6 +351,7 @@
 		AE1683C71E93480600C6E393 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AE3606931EA21B12004AB867 /* EmotionIcons */,
 				AE1683D31E93480600C6E393 /* images.xcassets */,
 				AE1683D81E93480600C6E393 /* Info.plist */,
 				AE1684001E9350F600C6E393 /* PrefixHeader.pch */,
@@ -350,6 +380,7 @@
 		AE1683FA1E934ED900C6E393 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AEF8FF4F1E9F193000366C9E /* Compose */,
 				AEFAFD331E96341A008230FF /* OAuth */,
 				AEFAFD2E1E95CFA6008230FF /* NewFeature */,
 				AEBBE67E1E9397FF004454C6 /* Discover */,
@@ -563,6 +594,8 @@
 				AEBBE6C01E93DD44004454C6 /* HHDropdownMenu.m */,
 				AED2277C1E9E183600315B1C /* HHIconView.h */,
 				AED2277D1E9E183600315B1C /* HHIconView.m */,
+				AEF8FF591E9F4AD000366C9E /* HHTextView.h */,
+				AEF8FF5A1E9F4AD000366C9E /* HHTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -753,6 +786,53 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		AEF8FF4F1E9F193000366C9E /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				AEF8FF551E9F4A6200366C9E /* Controller */,
+				AEF8FF531E9F4A5900366C9E /* Model */,
+				AEF8FF541E9F4A5900366C9E /* View */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		AEF8FF531E9F4A5900366C9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AE3606951EA23ADA004AB867 /* HHEmotion.h */,
+				AE3606961EA23ADA004AB867 /* HHEmotion.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AEF8FF541E9F4A5900366C9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AEF8FF5C1E9F640700366C9E /* HHComposeToolbar.h */,
+				AEF8FF5D1E9F640700366C9E /* HHComposeToolbar.m */,
+				AE190BA81EA0701C00D42A02 /* HHComposePhotosView.h */,
+				AE190BA91EA0701C00D42A02 /* HHComposePhotosView.m */,
+				AE190BAB1EA0ADA900D42A02 /* HHEmotionKeyboard.h */,
+				AE190BAC1EA0ADA900D42A02 /* HHEmotionKeyboard.m */,
+				AE190BAE1EA0AF9400D42A02 /* HHEmotionTabBar.h */,
+				AE190BAF1EA0AF9400D42A02 /* HHEmotionTabBar.m */,
+				AE190BB11EA0B05C00D42A02 /* HHEmotionListView.h */,
+				AE190BB21EA0B05C00D42A02 /* HHEmotionListView.m */,
+				AE36068D1EA20F38004AB867 /* HHEmotionTabBarButton.h */,
+				AE36068E1EA20F38004AB867 /* HHEmotionTabBarButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AEF8FF551E9F4A6200366C9E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AEF8FF561E9F4A6200366C9E /* HHComposeVC.h */,
+				AEF8FF571E9F4A6200366C9E /* HHComposeVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		AEFAFD2E1E95CFA6008230FF /* NewFeature */ = {
 			isa = PBXGroup;
 			children = (
@@ -912,6 +992,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3606941EA21B12004AB867 /* EmotionIcons in Resources */,
 				AEBBE6B81E939800004454C6 /* HHTest1VC.xib in Resources */,
 				AE1683D41E93480600C6E393 /* images.xcassets in Resources */,
 				AEF884F01E973619002E0CED /* MBProgressHUD.bundle in Resources */,
@@ -941,6 +1022,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEAA7F841E990060003EC9DF /* MJTypeEncoding.m in Sources */,
+				AEF8FF581E9F4A6200366C9E /* HHComposeVC.m in Sources */,
 				AEFAFD4B1E963F9E008230FF /* AFHTTPRequestOperation.m in Sources */,
 				AEBBE6B61E939800004454C6 /* HHProfileVC.m in Sources */,
 				AEF885001E978F7A002E0CED /* HHTitleButton.m in Sources */,
@@ -976,8 +1058,10 @@
 				AEF884F51E973B95002E0CED /* HHAccountTool.m in Sources */,
 				AEF884FA1E977EC0002E0CED /* Foundation+Log.m in Sources */,
 				AEFAFD531E963F9E008230FF /* AFURLSessionManager.m in Sources */,
+				AE190BAD1EA0ADA900D42A02 /* HHEmotionKeyboard.m in Sources */,
 				AEF1C8531E97D0EB0072831F /* UIImage+GIF.m in Sources */,
 				AEF1C8571E97D0EB0072831F /* UIImageView+WebCache.m in Sources */,
+				AE190BB31EA0B05C00D42A02 /* HHEmotionListView.m in Sources */,
 				AEAA7F871E990060003EC9DF /* NSObject+MJMember.m in Sources */,
 				AEBBE6BB1E939E70004454C6 /* UIBarButtonItem+Extension.m in Sources */,
 				AEF1C84B1E97D0EB0072831F /* SDImageCache.m in Sources */,
@@ -995,21 +1079,27 @@
 				AEF1C84A1E97D0EB0072831F /* NSData+ImageContentType.m in Sources */,
 				AEAA7F851E990060003EC9DF /* NSObject+MJCoding.m in Sources */,
 				AEF884E51E973028002E0CED /* HHOAuthVC.m in Sources */,
+				AEF8FF5E1E9F640700366C9E /* HHComposeToolbar.m in Sources */,
 				AEBBE6B41E939800004454C6 /* main.m in Sources */,
+				AE190BB01EA0AF9400D42A02 /* HHEmotionTabBar.m in Sources */,
 				AEF9618A1E94C54400B4A6A2 /* HHTabbar.m in Sources */,
 				AEF1C8521E97D0EB0072831F /* UIButton+WebCache.m in Sources */,
 				AEAA7F801E990060003EC9DF /* MJIvar.m in Sources */,
 				AEAA7F821E990060003EC9DF /* MJMethod.m in Sources */,
+				AE190BAA1EA0701C00D42A02 /* HHComposePhotosView.m in Sources */,
 				AEBBE6B71E939800004454C6 /* HHTest1VC.m in Sources */,
 				AEF961871E9486F500B4A6A2 /* HHTitleMenuVC.m in Sources */,
 				AEAA7F611E98ED62003EC9DF /* HHUser.m in Sources */,
+				AE36068F1EA20F38004AB867 /* HHEmotionTabBarButton.m in Sources */,
 				AEAA7F921E9A75D3003EC9DF /* HHStatusFrame.m in Sources */,
 				AEFAFD4C1E963F9E008230FF /* AFHTTPRequestOperationManager.m in Sources */,
 				AEF1C8581E97D0EB0072831F /* UIView+WebCacheOperation.m in Sources */,
 				AEF25AFE1E9B669700CCC439 /* HHPhoto.m in Sources */,
+				AE3606971EA23ADA004AB867 /* HHEmotion.m in Sources */,
 				AEAA7F7E1E990060003EC9DF /* MJConst.m in Sources */,
 				AEF1C8491E97D0EB0072831F /* MKAnnotationView+WebCache.m in Sources */,
 				AEAA7F8F1E9A6BCD003EC9DF /* HHStatusCell.m in Sources */,
+				AEF8FF5B1E9F4AD000366C9E /* HHTextView.m in Sources */,
 				AEFAFD4F1E963F9E008230FF /* AFSecurityPolicy.m in Sources */,
 				AEBBE6B11E939800004454C6 /* HHNavigationController.m in Sources */,
 			);

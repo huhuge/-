@@ -13,6 +13,8 @@
 #import "HHProfileVC.h"
 #import "HHNavigationController.h"
 #import "HHTabbar.h"
+#import "HHComposeVC.h"
+
 
 @interface HHTabbarVC ()<HHTabbarDelegate>
 
@@ -75,9 +77,10 @@
 
 // modal一个新VC
 - (void)tabbarDidClickPlusButton:(HHTabbar *)tabBar{
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.backgroundColor = HHRGBColor(13, 123, 123);
-    [self presentViewController:vc animated:NO completion:nil];
+    HHComposeVC *compose = [[HHComposeVC alloc] init];
+    
+    HHNavigationController *nav = [[HHNavigationController alloc] initWithRootViewController:compose];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 
