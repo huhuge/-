@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE01195B1EA707830070F49A /* HHEmotionPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE01195A1EA707830070F49A /* HHEmotionPageView.m */; };
+		AE01195E1EA7103B0070F49A /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = AE01195D1EA7103B0070F49A /* NSString+Emoji.m */; };
 		AE1683D41E93480600C6E393 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE1683D31E93480600C6E393 /* images.xcassets */; };
 		AE1683E21E93480600C6E393 /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1683E11E93480600C6E393 /* ___Tests.m */; };
 		AE1683ED1E93480600C6E393 /* ___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1683EC1E93480600C6E393 /* ___UITests.m */; };
@@ -115,6 +117,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE0119591EA707830070F49A /* HHEmotionPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmotionPageView.h; sourceTree = "<group>"; };
+		AE01195A1EA707830070F49A /* HHEmotionPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionPageView.m; sourceTree = "<group>"; };
+		AE01195C1EA7103B0070F49A /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		AE01195D1EA7103B0070F49A /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
 		AE1683C41E93480600C6E393 /* 嗨微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "嗨微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1683D31E93480600C6E393 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		AE1683D81E93480600C6E393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -529,6 +535,8 @@
 		AEBBE68B1E9397FF004454C6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				AE01195C1EA7103B0070F49A /* NSString+Emoji.h */,
+				AE01195D1EA7103B0070F49A /* NSString+Emoji.m */,
 				AEF884F91E977EC0002E0CED /* Foundation+Log.m */,
 				AEBBE68C1E9397FF004454C6 /* UIView+Extension.h */,
 				AEBBE68D1E9397FF004454C6 /* UIView+Extension.m */,
@@ -820,6 +828,8 @@
 				AE190BB21EA0B05C00D42A02 /* HHEmotionListView.m */,
 				AE36068D1EA20F38004AB867 /* HHEmotionTabBarButton.h */,
 				AE36068E1EA20F38004AB867 /* HHEmotionTabBarButton.m */,
+				AE0119591EA707830070F49A /* HHEmotionPageView.h */,
+				AE01195A1EA707830070F49A /* HHEmotionPageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1066,6 +1076,7 @@
 				AEBBE6BB1E939E70004454C6 /* UIBarButtonItem+Extension.m in Sources */,
 				AEF1C84B1E97D0EB0072831F /* SDImageCache.m in Sources */,
 				AEBBE6BE1E93C38D004454C6 /* HHSearchBar.m in Sources */,
+				AE01195E1EA7103B0070F49A /* NSString+Emoji.m in Sources */,
 				AEFAFD501E963F9E008230FF /* AFURLConnectionOperation.m in Sources */,
 				AEFAFD521E963F9E008230FF /* AFURLResponseSerialization.m in Sources */,
 				AEAA7F831E990060003EC9DF /* MJType.m in Sources */,
@@ -1090,6 +1101,7 @@
 				AEBBE6B71E939800004454C6 /* HHTest1VC.m in Sources */,
 				AEF961871E9486F500B4A6A2 /* HHTitleMenuVC.m in Sources */,
 				AEAA7F611E98ED62003EC9DF /* HHUser.m in Sources */,
+				AE01195B1EA707830070F49A /* HHEmotionPageView.m in Sources */,
 				AE36068F1EA20F38004AB867 /* HHEmotionTabBarButton.m in Sources */,
 				AEAA7F921E9A75D3003EC9DF /* HHStatusFrame.m in Sources */,
 				AEFAFD4C1E963F9E008230FF /* AFHTTPRequestOperationManager.m in Sources */,

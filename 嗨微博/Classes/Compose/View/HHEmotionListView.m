@@ -6,14 +6,12 @@
 //  Copyright © 2017年 huhuge. All rights reserved.
 // 表情键盘顶部表情内容
 
-// 每一页的表情个数
-#define HHEmotionPageSize 20
-
 #import "HHEmotionListView.h"
+#import "HHEmotionPageView.h"
 
-@interface HHEmotionListView()
+@interface HHEmotionListView()<UIScrollViewDelegate>
 
-@property (nonatomic, weak) UIScrollView *scrollowView;
+@property (nonatomic, weak) UIScrollView *scrollView;
 @property (nonatomic, weak) UIPageControl *pageControl;
 
 @end
@@ -26,9 +24,13 @@
     if (self) {
         // 1.UIScrollView
         UIScrollView *scrollView = [[UIScrollView alloc] init];
-        scrollView.backgroundColor = [UIColor yellowColor];
+        scrollView.backgroundColor = [UIColor whiteColor];
+        scrollView.pagingEnabled = YES;
+        scrollView.showsVerticalScrollIndicator = NO;
+        scrollView.showsHorizontalScrollIndicator = NO;
+        scrollView.delegate = self;
         [self addSubview:scrollView];
-        self.scrollowView = scrollView;
+        self.scrollView = scrollView;
         
         // 2.UIPageControl
         UIPageControl *pageControl = [[UIPageControl alloc] init];
@@ -48,11 +50,35 @@
 - (void)setEmotions:(NSArray *)emotions{
     _emotions = emotions;
     
+    NSUInteger count = (emotions.count + HHEmotionPageSize - 1) / HHEmotionPageSize;
+    
     // 1.设置页数
-    self.pageControl.numberOfPages = (emotions.count + HHEmotionPageSize - 1) / HHEmotionPageSize;
+    self.pageControl.numberOfPages = count;
     
     
-    // 2.
+    // 2.创建用来显示每一页表情的控件
+    for (int i = 0; i < count; i++) {
+        HHEmotionPageView *pageView = [[HHEmotionPageView alloc] init];
+//        pageView.backgroundColor = HHRandomColor;
+    
+        // 设置该也表情
+        NSRange range;
+        range.location = i * HHEmotionPageSize;
+        
+        // 剩下个数
+        NSUInteger left = emotions.count - range.location;
+        if (left >= HHEmotionPageSize) { // 剩下的大于20个
+            range.length = HHEmotionPageSize;
+        } else { // 剩下不足20个
+            range.length = left;
+        }
+        
+        pageView.emotions = [emotions subarrayWithRange:range];
+        [self.scrollView addSubview:pageView];
+        
+    }
+    
+
     
 }
 
@@ -61,14 +87,35 @@
     
     // 1.UIPageControl
     self.pageControl.width = self.width;
-    self.pageControl.height = 35;
+    self.pageControl.height = 25;
     self.pageControl.x = 0;
     self.pageControl.y = self.height - self.pageControl.height;
     
-    // 2.
-    self.scrollowView.width = self.width;
-    self.scrollowView.height = self.pageControl.y;
-    self.scrollowView.x = self.scrollowView.y = 0;
+    // 2.scrollView
+    self.scrollView.width = self.width;
+    self.scrollView.height = self.pageControl.y;
+    self.scrollView.x = self.scrollView.y = 0;
+    
+    // 3.设置scrollView内部每一页的尺寸
+    NSUInteger count = self.scrollView.subviews.count;
+    for (int i = 0; i < count; i++) {
+        HHEmotionPageView *pageView = self.scrollView.subviews[i];
+        pageView.height = self.scrollView.height;
+        pageView.width = ScreenW;
+        pageView.x = pageView.width * i;
+        pageView.y = 0;
+
+    }
+    
+    // 4.设置scrollView的contentSize
+    self.scrollView.contentSize = CGSizeMake(count * self.scrollView.width, 0);
+
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    double pageNo = scrollView.contentOffset.x / scrollView.width;
+    self.pageControl.currentPage = (int)(pageNo +0.5);
+}
+
 
 @end
