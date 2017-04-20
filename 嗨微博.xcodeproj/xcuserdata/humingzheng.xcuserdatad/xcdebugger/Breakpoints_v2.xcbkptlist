@@ -13,5 +13,69 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x55e8;&#x5fae;&#x535a;/Classes/Compose/Controller/HHComposeVC.m"
+            timestampString = "514361604.572796"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
+            landmarkName = "-sendWithoutImage"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[HHComposeVC sendWithoutImage]"
+                  moduleName = "&#x55e8;&#x5fae;&#x535a;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/humingzheng/Documents/%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/%E5%97%A8%E5%BE%AE%E5%8D%9A/%E5%97%A8%E5%BE%AE%E5%8D%9A/Classes/Compose/Controller/HHComposeVC.m"
+                  timestampString = "514366177.8016"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__31-[HHComposeVC sendWithoutImage]_block_invoke"
+                  moduleName = "&#x55e8;&#x5fae;&#x535a;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/humingzheng/Documents/%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/%E5%97%A8%E5%BE%AE%E5%8D%9A/%E5%97%A8%E5%BE%AE%E5%8D%9A/Classes/Compose/Controller/HHComposeVC.m"
+                  timestampString = "514366177.804136"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "267"
+                  endingLineNumber = "267"
+                  offsetFromSymbolStart = "82">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x55e8;&#x5fae;&#x535a;/Classes/Compose/Controller/HHComposeVC.m"
+            timestampString = "514361813.543942"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "-sendWithoutImage"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

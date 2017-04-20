@@ -8,15 +8,16 @@
 
 #import "HHComposeVC.h"
 #import "HHAccountTool.h"
-#import "HHTextView.h"
 #import "HHComposeToolbar.h"
 #import "HHComposePhotosView.h"
 #import "HHEmotionKeyboard.h"
+#import "HHEmotion.h"
+#import "HHEmotionTextView.h"
 
 @interface HHComposeVC ()<UITextViewDelegate,HHComposeToolbarDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 /** 输入控件 */
-@property (nonatomic, weak) HHTextView *textView;
+@property (nonatomic, weak) HHEmotionTextView *textView;
 
 /** 键盘顶部工具条 */
 @property (nonatomic, weak) HHComposeToolbar *toolbar;
@@ -99,7 +100,7 @@
 #pragma mark ------设置输入控件------
 - (void)setupTextView{
     
-    HHTextView *textView = [[HHTextView alloc] init];
+    HHEmotionTextView *textView = [[HHEmotionTextView alloc] init];
     textView.frame = self.view.bounds;
     textView.font = [UIFont systemFontOfSize:15];
     textView.delegate = self;
@@ -114,7 +115,25 @@
     
     // 键盘出现通知
     [HHNotificationCenter addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+    // 选中表情通知
+    [HHNotificationCenter addObserver:self selector:@selector(emotionDidSelect:) name:HHEmotionDidSelectNotification object:nil];
+    
+    // 删除文字通知
+    [HHNotificationCenter addObserver:self selector:@selector(emotionDidDelete) name:HHEmotionDidDeleteNotification object:nil];
 }
+
+#pragma mark ------表情输入监听------
+- (void)emotionDidSelect:(NSNotification *)notification{
+    HHEmotion *emotion = notification.userInfo[HHSelectEmotionKey];
+    [self.textView insertEmotion:emotion];
+}
+#pragma mark ------表情删除监听------
+- (void)emotionDidDelete{
+    // 删除最后的文字
+    [self.textView deleteBackward];
+}
+
 
 #pragma mark ------监听键盘高度改变------
 - (void)keyboardWillChangeFrame:(NSNotification *)notification{
@@ -214,7 +233,7 @@
     HHAccount *account = [HHAccountTool account];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = account.access_token;
-    params[@"status"] = self.textView.text;
+    params[@"status"] = self.textView.fullText;
     
     [mgr POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
@@ -241,7 +260,7 @@
     HHAccount *account = [HHAccountTool account];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = account.access_token;
-    params[@"status"] = self.textView.text;
+    params[@"status"] = self.textView.fullText;
     
     // 3.发送请求
     [mgr POST:@"https://api.weibo.com/2/statuses/update.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {

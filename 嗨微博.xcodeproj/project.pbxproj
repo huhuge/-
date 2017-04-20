@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		AE01195B1EA707830070F49A /* HHEmotionPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE01195A1EA707830070F49A /* HHEmotionPageView.m */; };
 		AE01195E1EA7103B0070F49A /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = AE01195D1EA7103B0070F49A /* NSString+Emoji.m */; };
+		AE0119611EA735C30070F49A /* HHEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0119601EA735C30070F49A /* HHEmotionPopView.m */; };
+		AE0119631EA735E70070F49A /* HHEmotionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE0119621EA735E70070F49A /* HHEmotionPopView.xib */; };
+		AE0119661EA73DBB0070F49A /* HHEmotionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0119651EA73DBB0070F49A /* HHEmotionButton.m */; };
+		AE0119691EA75CBE0070F49A /* HHEmotionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0119681EA75CBE0070F49A /* HHEmotionTextView.m */; };
+		AE01196C1EA760490070F49A /* UITextView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AE01196B1EA760490070F49A /* UITextView+Extension.m */; };
 		AE1683D41E93480600C6E393 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE1683D31E93480600C6E393 /* images.xcassets */; };
 		AE1683E21E93480600C6E393 /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1683E11E93480600C6E393 /* ___Tests.m */; };
 		AE1683ED1E93480600C6E393 /* ___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1683EC1E93480600C6E393 /* ___UITests.m */; };
@@ -69,6 +74,7 @@
 		AEF1C8581E97D0EB0072831F /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF1C8481E97D0EB0072831F /* UIView+WebCacheOperation.m */; };
 		AEF25AFE1E9B669700CCC439 /* HHPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF25AFD1E9B669700CCC439 /* HHPhoto.m */; };
 		AEF2ED4C1E9C829B006A6F23 /* HHStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF2ED4B1E9C829B006A6F23 /* HHStatusToolbar.m */; };
+		AEF5A14B1EA885460032D67B /* HHEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF5A14A1EA885460032D67B /* HHEmotionAttachment.m */; };
 		AEF620A21E9DBB1100DE821F /* HHStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF620A11E9DBB1100DE821F /* HHStatusPhotosView.m */; };
 		AEF620A51E9DF71900DE821F /* HHStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF620A41E9DF71900DE821F /* HHStatusPhotoView.m */; };
 		AEF81BE91E9D063A00109D50 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF81BE81E9D063A00109D50 /* NSDate+Extension.m */; };
@@ -121,6 +127,15 @@
 		AE01195A1EA707830070F49A /* HHEmotionPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionPageView.m; sourceTree = "<group>"; };
 		AE01195C1EA7103B0070F49A /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
 		AE01195D1EA7103B0070F49A /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
+		AE01195F1EA735C30070F49A /* HHEmotionPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmotionPopView.h; sourceTree = "<group>"; };
+		AE0119601EA735C30070F49A /* HHEmotionPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionPopView.m; sourceTree = "<group>"; };
+		AE0119621EA735E70070F49A /* HHEmotionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HHEmotionPopView.xib; sourceTree = "<group>"; };
+		AE0119641EA73DBB0070F49A /* HHEmotionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmotionButton.h; sourceTree = "<group>"; };
+		AE0119651EA73DBB0070F49A /* HHEmotionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionButton.m; sourceTree = "<group>"; };
+		AE0119671EA75CBE0070F49A /* HHEmotionTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmotionTextView.h; sourceTree = "<group>"; };
+		AE0119681EA75CBE0070F49A /* HHEmotionTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionTextView.m; sourceTree = "<group>"; };
+		AE01196A1EA760490070F49A /* UITextView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Extension.h"; sourceTree = "<group>"; };
+		AE01196B1EA760490070F49A /* UITextView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Extension.m"; sourceTree = "<group>"; };
 		AE1683C41E93480600C6E393 /* 嗨微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "嗨微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1683D31E93480600C6E393 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		AE1683D81E93480600C6E393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -243,6 +258,8 @@
 		AEF25AFD1E9B669700CCC439 /* HHPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHPhoto.m; sourceTree = "<group>"; };
 		AEF2ED4A1E9C829B006A6F23 /* HHStatusToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHStatusToolbar.h; sourceTree = "<group>"; };
 		AEF2ED4B1E9C829B006A6F23 /* HHStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHStatusToolbar.m; sourceTree = "<group>"; };
+		AEF5A1491EA885460032D67B /* HHEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmotionAttachment.h; sourceTree = "<group>"; };
+		AEF5A14A1EA885460032D67B /* HHEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionAttachment.m; sourceTree = "<group>"; };
 		AEF620A01E9DBB1100DE821F /* HHStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHStatusPhotosView.h; sourceTree = "<group>"; };
 		AEF620A11E9DBB1100DE821F /* HHStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHStatusPhotosView.m; sourceTree = "<group>"; };
 		AEF620A31E9DF71900DE821F /* HHStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHStatusPhotoView.h; sourceTree = "<group>"; };
@@ -548,6 +565,8 @@
 				AEF81BE81E9D063A00109D50 /* NSDate+Extension.m */,
 				AEF81BEA1E9D155300109D50 /* NSString+Extension.h */,
 				AEF81BEB1E9D155300109D50 /* NSString+Extension.m */,
+				AE01196A1EA760490070F49A /* UITextView+Extension.h */,
+				AE01196B1EA760490070F49A /* UITextView+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -809,6 +828,8 @@
 			children = (
 				AE3606951EA23ADA004AB867 /* HHEmotion.h */,
 				AE3606961EA23ADA004AB867 /* HHEmotion.m */,
+				AEF5A1491EA885460032D67B /* HHEmotionAttachment.h */,
+				AEF5A14A1EA885460032D67B /* HHEmotionAttachment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -830,6 +851,13 @@
 				AE36068E1EA20F38004AB867 /* HHEmotionTabBarButton.m */,
 				AE0119591EA707830070F49A /* HHEmotionPageView.h */,
 				AE01195A1EA707830070F49A /* HHEmotionPageView.m */,
+				AE01195F1EA735C30070F49A /* HHEmotionPopView.h */,
+				AE0119601EA735C30070F49A /* HHEmotionPopView.m */,
+				AE0119621EA735E70070F49A /* HHEmotionPopView.xib */,
+				AE0119641EA73DBB0070F49A /* HHEmotionButton.h */,
+				AE0119651EA73DBB0070F49A /* HHEmotionButton.m */,
+				AE0119671EA75CBE0070F49A /* HHEmotionTextView.h */,
+				AE0119681EA75CBE0070F49A /* HHEmotionTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1006,6 +1034,7 @@
 				AEBBE6B81E939800004454C6 /* HHTest1VC.xib in Resources */,
 				AE1683D41E93480600C6E393 /* images.xcassets in Resources */,
 				AEF884F01E973619002E0CED /* MBProgressHUD.bundle in Resources */,
+				AE0119631EA735E70070F49A /* HHEmotionPopView.xib in Resources */,
 				AEAA7F8C1E9A2E82003EC9DF /* HHLoadMoreFooter.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1044,10 +1073,12 @@
 				AEF620A51E9DF71900DE821F /* HHStatusPhotoView.m in Sources */,
 				AEBBE6C11E93DD44004454C6 /* HHDropdownMenu.m in Sources */,
 				AED2277E1E9E183600315B1C /* HHIconView.m in Sources */,
+				AE01196C1EA760490070F49A /* UITextView+Extension.m in Sources */,
 				AEF884EF1E973619002E0CED /* MBProgressHUD+MJ.m in Sources */,
 				AEF1C8541E97D0EB0072831F /* UIImage+MultiFormat.m in Sources */,
 				AEBBE6B31E939800004454C6 /* AppDelegate.m in Sources */,
 				AEF81BEC1E9D155300109D50 /* NSString+Extension.m in Sources */,
+				AE0119691EA75CBE0070F49A /* HHEmotionTextView.m in Sources */,
 				AEAA7F7D1E990060003EC9DF /* MJArgument.m in Sources */,
 				AEF1C84E1E97D0EB0072831F /* SDWebImageDownloader.m in Sources */,
 				AEF884F81E9766E5002E0CED /* UIWindow+Extension.m in Sources */,
@@ -1065,6 +1096,8 @@
 				AEF884E81E973069002E0CED /* HHAccount.m in Sources */,
 				AEBBE6AE1E939800004454C6 /* HHDiscoverVC.m in Sources */,
 				AEFAFD4E1E963F9E008230FF /* AFNetworkReachabilityManager.m in Sources */,
+				AEF5A14B1EA885460032D67B /* HHEmotionAttachment.m in Sources */,
+				AE0119611EA735C30070F49A /* HHEmotionPopView.m in Sources */,
 				AEF884F51E973B95002E0CED /* HHAccountTool.m in Sources */,
 				AEF884FA1E977EC0002E0CED /* Foundation+Log.m in Sources */,
 				AEFAFD531E963F9E008230FF /* AFURLSessionManager.m in Sources */,
@@ -1104,6 +1137,7 @@
 				AE01195B1EA707830070F49A /* HHEmotionPageView.m in Sources */,
 				AE36068F1EA20F38004AB867 /* HHEmotionTabBarButton.m in Sources */,
 				AEAA7F921E9A75D3003EC9DF /* HHStatusFrame.m in Sources */,
+				AE0119661EA73DBB0070F49A /* HHEmotionButton.m in Sources */,
 				AEFAFD4C1E963F9E008230FF /* AFHTTPRequestOperationManager.m in Sources */,
 				AEF1C8581E97D0EB0072831F /* UIView+WebCacheOperation.m in Sources */,
 				AEF25AFE1E9B669700CCC439 /* HHPhoto.m in Sources */,
