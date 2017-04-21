@@ -363,7 +363,6 @@
 
 #pragma mark ------UIImagePickerControllerDelegate------
 
-//- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{};
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     
     UIImage *image = info[UIImagePickerControllerOriginalImage];
