@@ -7,10 +7,32 @@
 //
 
 #import "HHEmotion.h"
+#import "MJExtension.h"
 
 @implementation HHEmotion
 
+MJCodingImplementation
 
-
+//- (instancetype)initWithCoder:(NSCoder *)dcoder
+//{
+//    self = [super init];
+//    if (self) {
+////        self.chs = [dcoder decodeObjectForKey:@"chs"];
+////        self.png = [dcoder decodeObjectForKey:@"png"];
+////        self.code = [dcoder decodeObjectForKey:@"code"];
+//        [self enumerateIvarsWithBlock:^(MJIvar *ivar, BOOL *stop) {
+//            
+//            ivar.value = [dcoder decodeObjectForKey:ivar.name];
+//        }];
+//    }
+//    return self;
+//}
+//
+//
+//- (void)encodeWithCoder:(NSCoder *)aCoder{
+//    [aCoder encodeObject:self.chs forKey:@"chs"];
+//    [aCoder encodeObject:self.png forKey:@"png"];
+//    [aCoder encodeObject:self.code forKey:@"code"];
+//}
 
 @end

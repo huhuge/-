@@ -11,6 +11,7 @@
 #import "HHEmotion.h"
 #import "HHEmotionPopView.h"
 #import "HHEmotionButton.h"
+#import "HHEmotionTool.h"
 
 @interface HHEmotionPageView();
 
@@ -82,9 +83,7 @@
             // 手指在按钮上
             if (btn) {
                 // 发出通知
-                NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-                userInfo[HHSelectEmotionKey] = btn.emotion;
-                [HHNotificationCenter postNotificationName:HHEmotionDidSelectNotification object:nil userInfo:userInfo];
+                [self selectEmotion:btn.emotion];
             }
               break;
         }
@@ -161,9 +160,19 @@
     });
     
     // 发出通知
-    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-    userInfo[HHSelectEmotionKey] = sender.emotion;
-    [HHNotificationCenter postNotificationName:HHEmotionDidSelectNotification object:nil userInfo:userInfo];
+    [self selectEmotion:sender.emotion];
 }
+
+#pragma mark ------发出通知------
+- (void)selectEmotion:(HHEmotion *)emotion{
+    // 将表情存入沙盒
+    [HHEmotionTool addRecentEmotion:emotion];
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    userInfo[HHSelectEmotionKey] = emotion;
+    [HHNotificationCenter postNotificationName:HHEmotionDidSelectNotification object:nil userInfo:userInfo];
+    
+}
+
+
 
 @end

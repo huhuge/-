@@ -36,6 +36,7 @@
         UIPageControl *pageControl = [[UIPageControl alloc] init];
         pageControl.backgroundColor = [UIColor whiteColor];
         pageControl.userInteractionEnabled = NO;
+        pageControl.hidesForSinglePage = YES;
         // 3.KVC设置圆点图片
         [pageControl setValue:[UIImage imageNamed:@"compose_keyboard_dot_selected"] forKeyPath:@"currentPageImage"];
         [pageControl setValue:[UIImage imageNamed:@"compose_keyboard_dot_normal"] forKeyPath:@"pageImage"];

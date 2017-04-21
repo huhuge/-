@@ -11,6 +11,7 @@
 #import "HHEmotionListView.h"
 #import "HHEmotion.h"
 #import "MJExtension.h"
+#import "HHEmotionTool.h"
 
 @interface HHEmotionKeyboard()<HHEmotionTabBarDelegate>
 
@@ -35,6 +36,10 @@
 - (HHEmotionListView *)recentListView{
     if (!_recentListView) {
         self.recentListView = [[HHEmotionListView alloc] init];
+        // 加载沙盒中的数据
+        self.recentListView.emotions = [HHEmotionTool recentEmotions];
+        
+        
     }
     return _recentListView;
 }
