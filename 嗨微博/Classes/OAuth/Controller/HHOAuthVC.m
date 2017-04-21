@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD+MJ.h"
 #import "HHAccountTool.h"
+#import "HHHtttpTool.h"
 
 @interface HHOAuthVC ()<UIWebViewDelegate>
 
@@ -63,7 +64,6 @@
 
 #pragma mark ------请求------
 - (void)accessTokenWithCode:(NSString *)code{
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     NSMutableDictionary *params        = [NSMutableDictionary dictionary];
     params[@"client_id"]               = HHAppKey;
     params[@"client_secret"]           = HHAppSecret;
@@ -71,22 +71,23 @@
     params[@"redirect_uri"]            = HHRedirectURL;
     params[@"code"]                    = code;
 
-    [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-        HLog(@"%@",responseObject);
+    
+    [HHHtttpTool post:@"https://api.weibo.com/oauth2/access_token" params:params success:^(id json){
         [MBProgressHUD hideHUD];
         
         //存储账号信息
-        HHAccount *account = [HHAccount accountWithDict:responseObject];
+        HHAccount *account = [HHAccount accountWithDict:json];
         [HHAccountTool saveAccount:account];
-
+        
         // 切换窗口的控制器
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
         [window switchRootViewController];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        HLog(@"%@",error.description)
+    } failure:^(NSError *error){
         [MBProgressHUD hideHUD];
     }];
+
+
 }
 
 

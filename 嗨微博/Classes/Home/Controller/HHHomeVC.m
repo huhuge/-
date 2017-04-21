@@ -18,7 +18,7 @@
 #import "HHStatusCell.h"
 #import "HHLoadMoreFooter.h"
 #import "HHStatusFrame.h"
-
+#import "HHHtttpTool.h"
 
 @interface HHHomeVC ()<HHDropdownMenuDelegate,UIScrollViewDelegate>
 /**
@@ -195,11 +195,6 @@
 //    return;
     
     // 1.请求管理者
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    NSMutableSet *contentTypes = [[NSMutableSet alloc] initWithSet:mgr.responseSerializer.acceptableContentTypes];
-    [contentTypes addObject:@"text/html"];
-    [contentTypes addObject:@"text/plain"];
-    mgr.responseSerializer.acceptableContentTypes = contentTypes;
     
     // 2.拼接请求参数
     HHAccount *account = [HHAccountTool account];
@@ -214,10 +209,9 @@
     }
     
     // 3.发送请求
-    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-        HLog(@"%@",responseObject);
+    [HHHtttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id json) {
         // 将 "微博字典"数组 转为 "微博模型"数组
-        NSArray *newStatuses = [HHStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        NSArray *newStatuses = [HHStatus objectArrayWithKeyValuesArray:json[@"statuses"]];
         
         // 将 HWStatus数组 转为 HWStatusFrame数组
         NSArray *newFrames = [self statusFramesWithStatus:newStatuses];
@@ -237,11 +231,10 @@
         
         [self.tableView reloadData];
 
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        HLog(@"请求失败-%@", error);
-        
+    } failure:^(NSError *error) {
         // 结束刷新刷新
         [control endRefreshing];
+
     }];
 }
 
@@ -251,10 +244,7 @@
  *  加载更多的微博数据
  */
 - (void)loadMoreStatus
-{
-    // 1.请求管理者
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
+{    
     // 2.拼接请求参数
     HHAccount *account = [HHAccountTool account];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -268,11 +258,9 @@
         long long maxId = lastStatusF.status.idstr.longLongValue - 1;
         params[@"max_id"] = @(maxId);
     }
-    
-    // 3.发送请求
-    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+    [HHHtttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id json) {
         // 将 "微博字典"数组 转为 "微博模型"数组
-        NSArray *newStatuses = [HHStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        NSArray *newStatuses = [HHStatus objectArrayWithKeyValuesArray:json[@"statuses"]];
         
         // 将 HWStatus数组 转为 HWStatusFrame数组
         NSArray *newFrames = [self statusFramesWithStatus:newStatuses];
@@ -285,12 +273,13 @@
         
         // 结束刷新(隐藏footer)
         self.tableView.tableFooterView.hidden = YES;
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        HLog(@"请求失败-%@", error);
-        
+
+    } failure:^(NSError *error) {
         // 结束刷新
         self.tableView.tableFooterView.hidden = YES;
+
     }];
+    
 }
 
 

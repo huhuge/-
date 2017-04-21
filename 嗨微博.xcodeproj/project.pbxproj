@@ -77,6 +77,7 @@
 		AEF5A14B1EA885460032D67B /* HHEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF5A14A1EA885460032D67B /* HHEmotionAttachment.m */; };
 		AEF5A14F1EA8A33C0032D67B /* HHEmotionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF5A14E1EA8A33C0032D67B /* HHEmotionTool.m */; };
 		AEF618F01EA9DF7D0053A66A /* HHConst.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF618EF1EA9DF7D0053A66A /* HHConst.m */; };
+		AEF618F41EA9F6490053A66A /* HHHtttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF618F31EA9F6490053A66A /* HHHtttpTool.m */; };
 		AEF620A21E9DBB1100DE821F /* HHStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF620A11E9DBB1100DE821F /* HHStatusPhotosView.m */; };
 		AEF620A51E9DF71900DE821F /* HHStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF620A41E9DF71900DE821F /* HHStatusPhotoView.m */; };
 		AEF81BE91E9D063A00109D50 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF81BE81E9D063A00109D50 /* NSDate+Extension.m */; };
@@ -266,6 +267,8 @@
 		AEF5A14E1EA8A33C0032D67B /* HHEmotionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionTool.m; sourceTree = "<group>"; };
 		AEF618EE1EA9DF7D0053A66A /* HHConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHConst.h; sourceTree = "<group>"; };
 		AEF618EF1EA9DF7D0053A66A /* HHConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHConst.m; sourceTree = "<group>"; };
+		AEF618F21EA9F6490053A66A /* HHHtttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHHtttpTool.h; sourceTree = "<group>"; };
+		AEF618F31EA9F6490053A66A /* HHHtttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHHtttpTool.m; sourceTree = "<group>"; };
 		AEF620A01E9DBB1100DE821F /* HHStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHStatusPhotosView.h; sourceTree = "<group>"; };
 		AEF620A11E9DBB1100DE821F /* HHStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHStatusPhotosView.m; sourceTree = "<group>"; };
 		AEF620A31E9DF71900DE821F /* HHStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHStatusPhotoView.h; sourceTree = "<group>"; };
@@ -545,6 +548,7 @@
 		AEBBE68A1E9397FF004454C6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AEF618F11EA9F6190053A66A /* Tool */,
 				AEBBE68B1E9397FF004454C6 /* Category */,
 				AEBBE68E1E9397FF004454C6 /* Controller */,
 				AEBBE6931E9397FF004454C6 /* Lib */,
@@ -787,6 +791,15 @@
 			children = (
 				AEF5A14D1EA8A33C0032D67B /* HHEmotionTool.h */,
 				AEF5A14E1EA8A33C0032D67B /* HHEmotionTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		AEF618F11EA9F6190053A66A /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				AEF618F21EA9F6490053A66A /* HHHtttpTool.h */,
+				AEF618F31EA9F6490053A66A /* HHHtttpTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1150,6 +1163,7 @@
 				AEF1C8521E97D0EB0072831F /* UIButton+WebCache.m in Sources */,
 				AEAA7F801E990060003EC9DF /* MJIvar.m in Sources */,
 				AEAA7F821E990060003EC9DF /* MJMethod.m in Sources */,
+				AEF618F41EA9F6490053A66A /* HHHtttpTool.m in Sources */,
 				AE190BAA1EA0701C00D42A02 /* HHComposePhotosView.m in Sources */,
 				AEBBE6B71E939800004454C6 /* HHTest1VC.m in Sources */,
 				AEF961871E9486F500B4A6A2 /* HHTitleMenuVC.m in Sources */,
