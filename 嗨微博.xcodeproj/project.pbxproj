@@ -76,6 +76,7 @@
 		AEF2ED4C1E9C829B006A6F23 /* HHStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF2ED4B1E9C829B006A6F23 /* HHStatusToolbar.m */; };
 		AEF5A14B1EA885460032D67B /* HHEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF5A14A1EA885460032D67B /* HHEmotionAttachment.m */; };
 		AEF5A14F1EA8A33C0032D67B /* HHEmotionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF5A14E1EA8A33C0032D67B /* HHEmotionTool.m */; };
+		AEF618F01EA9DF7D0053A66A /* HHConst.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF618EF1EA9DF7D0053A66A /* HHConst.m */; };
 		AEF620A21E9DBB1100DE821F /* HHStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF620A11E9DBB1100DE821F /* HHStatusPhotosView.m */; };
 		AEF620A51E9DF71900DE821F /* HHStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF620A41E9DF71900DE821F /* HHStatusPhotoView.m */; };
 		AEF81BE91E9D063A00109D50 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF81BE81E9D063A00109D50 /* NSDate+Extension.m */; };
@@ -263,6 +264,8 @@
 		AEF5A14A1EA885460032D67B /* HHEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionAttachment.m; sourceTree = "<group>"; };
 		AEF5A14D1EA8A33C0032D67B /* HHEmotionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmotionTool.h; sourceTree = "<group>"; };
 		AEF5A14E1EA8A33C0032D67B /* HHEmotionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionTool.m; sourceTree = "<group>"; };
+		AEF618EE1EA9DF7D0053A66A /* HHConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHConst.h; sourceTree = "<group>"; };
+		AEF618EF1EA9DF7D0053A66A /* HHConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHConst.m; sourceTree = "<group>"; };
 		AEF620A01E9DBB1100DE821F /* HHStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHStatusPhotosView.h; sourceTree = "<group>"; };
 		AEF620A11E9DBB1100DE821F /* HHStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHStatusPhotosView.m; sourceTree = "<group>"; };
 		AEF620A31E9DF71900DE821F /* HHStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHStatusPhotoView.h; sourceTree = "<group>"; };
@@ -611,6 +614,8 @@
 				AEBBE6961E939800004454C6 /* AppDelegate.h */,
 				AEBBE6971E939800004454C6 /* AppDelegate.m */,
 				AEBBE6981E939800004454C6 /* main.m */,
+				AEF618EE1EA9DF7D0053A66A /* HHConst.h */,
+				AEF618EF1EA9DF7D0053A66A /* HHConst.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1088,6 +1093,7 @@
 				AED2277E1E9E183600315B1C /* HHIconView.m in Sources */,
 				AE01196C1EA760490070F49A /* UITextView+Extension.m in Sources */,
 				AEF884EF1E973619002E0CED /* MBProgressHUD+MJ.m in Sources */,
+				AEF618F01EA9DF7D0053A66A /* HHConst.m in Sources */,
 				AEF1C8541E97D0EB0072831F /* UIImage+MultiFormat.m in Sources */,
 				AEBBE6B31E939800004454C6 /* AppDelegate.m in Sources */,
 				AEF81BEC1E9D155300109D50 /* NSString+Extension.m in Sources */,

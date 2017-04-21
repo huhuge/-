@@ -36,9 +36,7 @@
 - (HHEmotionListView *)recentListView{
     if (!_recentListView) {
         self.recentListView = [[HHEmotionListView alloc] init];
-        // 加载沙盒中的数据
         self.recentListView.emotions = [HHEmotionTool recentEmotions];
-        
         
     }
     return _recentListView;
@@ -80,21 +78,29 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // 1.contentView
-//        UIView *contentView = [[UIView alloc] init];
-//        [self addSubview:contentView];
-//        self.contentView = contentView;
-        
-        
-        
+ 
         // tabbar
         HHEmotionTabBar *tabBar = [[HHEmotionTabBar alloc] init];
         tabBar.delegate = self;
 //        tabBar.backgroundColor = [UIColor blueColor];
         [self addSubview:tabBar];
         self.tabBar = tabBar;
+        
+        // 监听表情选中通知
+        // 选中表情通知
+        [HHNotificationCenter addObserver:self selector:@selector(emotionDidSelect) name:HHEmotionDidSelectNotification object:nil];
+
     }
     return self;
+}
+
+
+- (void)emotionDidSelect{
+    self.recentListView.emotions = [HHEmotionTool recentEmotions];
+}
+
+- (void)dealloc{
+    [HHNotificationCenter removeObserver:self];
 }
 
 - (void)layoutSubviews{
@@ -126,6 +132,8 @@
     // 切换contentView内容
     switch (buttonTpye) {
         case HHEmotionTabBarButtonTypeRecent:{  // 最近
+            // 加载沙盒中的数据
+//            self.recentListView.emotions = [HHEmotionTool recentEmotions];
             [self addSubview:self.recentListView];
             break;
         }

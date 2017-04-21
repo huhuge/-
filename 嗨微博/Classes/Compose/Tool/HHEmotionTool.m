@@ -11,28 +11,49 @@
 #define HHRecentEmotionsPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"emotions.archive"]
 
 #import "HHEmotionTool.h"
-
+#import "HHEmotion.h"
 
 
 @implementation HHEmotionTool
 
+static NSMutableArray *_recentEmotions;
+
+
++ (void)initialize{
+    _recentEmotions = [NSKeyedUnarchiver unarchiveObjectWithFile:HHRecentEmotionsPath];
+    if (_recentEmotions == nil) {
+        _recentEmotions = [NSMutableArray array];
+    }
+
+}
+
 /** 存入数组 */
 + (void)addRecentEmotion:(HHEmotion *)emotion{
-    NSMutableArray *emotions = (NSMutableArray *)[self recentEmotions];
-    if (emotions == nil) {
-        emotions = [NSMutableArray array];
+    // 删除重复表情
+//    for (HHEmotion *e in emotions) {
+//        if ([e.chs isEqualToString:emotion.chs] || [e.code isEqualToString:emotion.code] ) {
+//            [emotions removeObject:e];
+//            break;
+//        }
+//    }
+    
+    [_recentEmotions removeObject:emotion];
+    
+    if (_recentEmotions.count == 20) { // 限制数组长度
+        [_recentEmotions removeLastObject];
     }
     
-    [emotions insertObject:emotion atIndex:0];
+    [_recentEmotions insertObject:emotion atIndex:0];
+//    [emotions removeAllObjects];
     
-    [NSKeyedArchiver archiveRootObject:emotions toFile:HHRecentEmotionsPath];
+    [NSKeyedArchiver archiveRootObject:_recentEmotions toFile:HHRecentEmotionsPath];
 }
 
 
 /** 返回装置HHEmotion模型的数组 */
 + (NSArray *)recentEmotions{
     
-    return [NSKeyedUnarchiver unarchiveObjectWithFile:HHRecentEmotionsPath];
+    return _recentEmotions;
 }
 
 @end

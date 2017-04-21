@@ -41,9 +41,13 @@
     _emotion = emotion;
     if (emotion.png) { // 有图片
         [self setImage:[UIImage imageNamed:emotion.png] forState:UIControlStateNormal];
+        [self setTitle:nil forState:UIControlStateNormal];
+
     } else if (emotion.code) { // emoji表情
         // emotion.code : 16进制 转字符串
         [self setTitle:emotion.code.emoji forState:UIControlStateNormal];
+        [self setImage:nil forState:UIControlStateNormal];
+
     }
 
 }

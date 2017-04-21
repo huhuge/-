@@ -35,4 +35,8 @@ MJCodingImplementation
 //    [aCoder encodeObject:self.code forKey:@"code"];
 //}
 
+- (BOOL)isEqual:(HHEmotion *)other{
+    return [self.chs isEqualToString:other.chs] || [self.code isEqualToString:other.code];
+}
+
 @end

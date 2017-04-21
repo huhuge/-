@@ -20,16 +20,10 @@
 #import "UIImageView+WebCache.h"
 #import "NSString+Emoji.h"
 #import "UITextView+Extension.h"
+#import "HHConst.h"
 
 // 通知中心
 #define HHNotificationCenter [NSNotificationCenter defaultCenter]
-// 表情选中通知
-#define HHEmotionDidSelectNotification @"HHEmotionDidSelectNotification"
-#define HHSelectEmotionKey @"HHSelectEmotionKey"
-// 表情删除通知
-#define HHEmotionDidDeleteNotification @"HHEmotionDidDeleteNotification"
-
-
 
 
 //打印

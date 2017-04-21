@@ -22,6 +22,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor whiteColor];
         // 1.UIScrollView
         UIScrollView *scrollView = [[UIScrollView alloc] init];
         scrollView.backgroundColor = [UIColor whiteColor];
@@ -51,6 +52,9 @@
 - (void)setEmotions:(NSArray *)emotions{
     _emotions = emotions;
     
+    [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    // 删除之前的控件
     NSUInteger count = (emotions.count + HHEmotionPageSize - 1) / HHEmotionPageSize;
     
     // 1.设置页数
@@ -79,7 +83,7 @@
         
     }
     
-
+    [self setNeedsLayout];
     
 }
 
