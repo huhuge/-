@@ -14,6 +14,8 @@
 #import "HHStatusToolbar.h"
 #import "HHStatusPhotosView.h"
 #import "HHIconView.h"
+#import "HHStatusTextView.h"
+
 
 @interface HHStatusCell()
 
@@ -33,13 +35,13 @@
 /** 来源 */
 @property (nonatomic, weak) UILabel *sourceLabel;
 /** 正文 */
-@property (nonatomic, weak) UILabel *contentLabel;
+@property (nonatomic, weak) HHStatusTextView *contentLabel;
 
 /* 转发微博 */
 /** 转发微博整体 */
 @property (nonatomic, weak) UIView *retweetView;
 /** 转发微博正文 */
-@property (nonatomic, weak) UILabel *retweetContentLabel;
+@property (nonatomic, weak) HHStatusTextView *retweetContentLabel;
 /** 转发微博配图 */
 @property (nonatomic, weak) HHStatusPhotosView *retweetPhotosView;
 
@@ -105,9 +107,8 @@
     self.retweetView = retweetView;
     
     /** 转发微博正文 + 昵称*/
-    UILabel *retweetContentLabel = [[UILabel alloc] init];
-    retweetContentLabel.font = HHRetweetStatusCellContentFont;
-    retweetContentLabel.numberOfLines = 0;
+    HHStatusTextView *retweetContentLabel = [[HHStatusTextView alloc] init];
+//    retweetContentLabel.font = HHRetweetStatusCellContentFont;
     [retweetView addSubview:retweetContentLabel];
     self.retweetContentLabel = retweetContentLabel;
     
@@ -164,9 +165,9 @@
     self.sourceLabel = sourceLabel;
     
     /** 正文 */
-    UILabel *contentLabel = [[UILabel alloc] init];
-    contentLabel.font = HHStatusCellContentFont;
-    contentLabel.numberOfLines = 0;
+    HHStatusTextView *contentLabel = [[HHStatusTextView alloc] init];
+//    contentLabel.font = HHStatusCellContentFont;
+//    contentLabel.backgroundColor = [UIColor redColor];
     [originalView addSubview:contentLabel];
     self.contentLabel = contentLabel;
 
@@ -233,20 +234,18 @@
     
     /** 正文 */
     self.contentLabel.frame = statusFrame.contentLabelF;
-    self.contentLabel.text = status.text;
+    self.contentLabel.attributedText = status.attributedText;
 
     /* 被转发微博 */
     if (status.retweeted_status) {
         
         HHStatus *retweeted_status = status.retweeted_status;
-        HHUser *retweeted_status_user = retweeted_status.user;
         /** 被转发微博整体 */
         self.retweetView.hidden = NO;
         self.retweetView.frame = statusFrame.retweetViewF;
         
         /** 被转发微博正文 */
-        NSString *retweetContent = [NSString stringWithFormat:@"@%@ : %@",retweeted_status_user.name,retweeted_status.text];
-        self.retweetContentLabel.text = retweetContent;
+        self.retweetContentLabel.attributedText = retweeted_status.attributedText;
         self.retweetContentLabel.frame = statusFrame.retweetContentLabelF;
         
         /** 被转发微博配图 */

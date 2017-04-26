@@ -18,6 +18,9 @@
 /** 微博信息内容 */
 @property (nonatomic, copy) NSString *text;
 
+/** 微博信息内容(图文混编) */
+@property (nonatomic, copy) NSAttributedString *attributedText;
+
 /** 微博创建时间 */
 @property (nonatomic, copy) NSString *created_at;
 
@@ -32,7 +35,8 @@
 
 /** 转发微博对象 */
 @property (nonatomic, strong) HHStatus *retweeted_status;
-
+/** 被转发微博信息内容(图文混编) */
+@property (nonatomic, copy) NSAttributedString *retweetedAttributedText;
 
 
 /** int 转发数 */

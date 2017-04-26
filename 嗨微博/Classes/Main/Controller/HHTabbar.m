@@ -52,7 +52,7 @@
     CGFloat tabbarBtnW = self.width / 5;
     CGFloat tabbarBtnIndex = 0;
     NSInteger count = self.subviews.count;
-    HLog(@"%ld",(long)count);
+//    HLog(@"%ld",(long)count);
 
     for (UIView *child in self.subviews) {
         Class class = NSClassFromString(@"UITabBarButton");

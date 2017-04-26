@@ -13,5 +13,14 @@
 @interface HHEmotionTool : NSObject
 
 + (void)addRecentEmotion:(HHEmotion *)emotion;
+
 + (NSArray *)recentEmotions;
++ (NSArray *)defaultEmotions;
++ (NSArray *)emojiEmotions;
++ (NSArray *)lxhEmotions;
+
+/**
+ 通过表情描述找到表情名
+ */
++ (HHEmotion *)emotionWithChs:(NSString *)chs;
 @end

@@ -14,6 +14,11 @@
 		AE0119661EA73DBB0070F49A /* HHEmotionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0119651EA73DBB0070F49A /* HHEmotionButton.m */; };
 		AE0119691EA75CBE0070F49A /* HHEmotionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0119681EA75CBE0070F49A /* HHEmotionTextView.m */; };
 		AE01196C1EA760490070F49A /* UITextView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AE01196B1EA760490070F49A /* UITextView+Extension.m */; };
+		AE08CC451EADEBD70019E6B2 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = AE08CC441EADEBD70019E6B2 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AE08CC481EADEC350019E6B2 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE08CC471EADEC350019E6B2 /* libicucore.tbd */; };
+		AE0C32951EAEE89F0083652C /* HHTextPart.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0C32941EAEE89F0083652C /* HHTextPart.m */; };
+		AE0C32981EAF19070083652C /* HHStatusTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0C32971EAF19070083652C /* HHStatusTextView.m */; };
+		AE0C329B1EAF31300083652C /* HHSpecial.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0C329A1EAF31300083652C /* HHSpecial.m */; };
 		AE1683D41E93480600C6E393 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE1683D31E93480600C6E393 /* images.xcassets */; };
 		AE1683E21E93480600C6E393 /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1683E11E93480600C6E393 /* ___Tests.m */; };
 		AE1683ED1E93480600C6E393 /* ___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1683EC1E93480600C6E393 /* ___UITests.m */; };
@@ -139,6 +144,15 @@
 		AE0119681EA75CBE0070F49A /* HHEmotionTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmotionTextView.m; sourceTree = "<group>"; };
 		AE01196A1EA760490070F49A /* UITextView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Extension.h"; sourceTree = "<group>"; };
 		AE01196B1EA760490070F49A /* UITextView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Extension.m"; sourceTree = "<group>"; };
+		AE08CC431EADEBD70019E6B2 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		AE08CC441EADEBD70019E6B2 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		AE08CC471EADEC350019E6B2 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		AE0C32931EAEE89F0083652C /* HHTextPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHTextPart.h; sourceTree = "<group>"; };
+		AE0C32941EAEE89F0083652C /* HHTextPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHTextPart.m; sourceTree = "<group>"; };
+		AE0C32961EAF19070083652C /* HHStatusTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHStatusTextView.h; sourceTree = "<group>"; };
+		AE0C32971EAF19070083652C /* HHStatusTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHStatusTextView.m; sourceTree = "<group>"; };
+		AE0C32991EAF31300083652C /* HHSpecial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHSpecial.h; sourceTree = "<group>"; };
+		AE0C329A1EAF31300083652C /* HHSpecial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHSpecial.m; sourceTree = "<group>"; };
 		AE1683C41E93480600C6E393 /* 嗨微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "嗨微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1683D31E93480600C6E393 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		AE1683D81E93480600C6E393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -331,6 +345,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE08CC481EADEC350019E6B2 /* libicucore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +366,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE08CC421EADEBD70019E6B2 /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				AE08CC431EADEBD70019E6B2 /* RegexKitLite.h */,
+				AE08CC441EADEBD70019E6B2 /* RegexKitLite.m */,
+			);
+			path = RegexKitLite;
+			sourceTree = "<group>";
+		};
+		AE08CC461EADEC350019E6B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE08CC471EADEC350019E6B2 /* libicucore.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AE1683BB1E93480600C6E393 = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +390,7 @@
 				AE1683E01E93480600C6E393 /* 嗨微博Tests */,
 				AE1683EB1E93480600C6E393 /* 嗨微博UITests */,
 				AE1683C51E93480600C6E393 /* Products */,
+				AE08CC461EADEC350019E6B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -519,6 +552,10 @@
 				AEAA7F911E9A75D3003EC9DF /* HHStatusFrame.m */,
 				AEF25AFC1E9B669700CCC439 /* HHPhoto.h */,
 				AEF25AFD1E9B669700CCC439 /* HHPhoto.m */,
+				AE0C32931EAEE89F0083652C /* HHTextPart.h */,
+				AE0C32941EAEE89F0083652C /* HHTextPart.m */,
+				AE0C32991EAF31300083652C /* HHSpecial.h */,
+				AE0C329A1EAF31300083652C /* HHSpecial.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -541,6 +578,8 @@
 				AEF620A11E9DBB1100DE821F /* HHStatusPhotosView.m */,
 				AEF620A31E9DF71900DE821F /* HHStatusPhotoView.h */,
 				AEF620A41E9DF71900DE821F /* HHStatusPhotoView.m */,
+				AE0C32961EAF19070083652C /* HHStatusTextView.h */,
+				AE0C32971EAF19070083652C /* HHStatusTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -597,6 +636,7 @@
 		AEBBE6931E9397FF004454C6 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				AE08CC421EADEBD70019E6B2 /* RegexKitLite */,
 				AEAA7F651E990060003EC9DF /* MJExtension */,
 				AEF1C8271E97D0EB0072831F /* SDWebImage */,
 				AEF884E91E973619002E0CED /* MBProgressHUD */,
@@ -1121,6 +1161,8 @@
 				AEFAFD4D1E963F9E008230FF /* AFHTTPSessionManager.m in Sources */,
 				AEAA7F641E98ED7C003EC9DF /* HHStatus.m in Sources */,
 				AEF884F11E973619002E0CED /* MBProgressHUD.m in Sources */,
+				AE08CC451EADEBD70019E6B2 /* RegexKitLite.m in Sources */,
+				AE0C32981EAF19070083652C /* HHStatusTextView.m in Sources */,
 				AEAA7F8A1E9A2E3F003EC9DF /* HHLoadMoreFooter.m in Sources */,
 				AEBBE6B01E939800004454C6 /* UIView+Extension.m in Sources */,
 				AEF1C8561E97D0EB0072831F /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -1143,6 +1185,7 @@
 				AEF1C84B1E97D0EB0072831F /* SDImageCache.m in Sources */,
 				AEBBE6BE1E93C38D004454C6 /* HHSearchBar.m in Sources */,
 				AE01195E1EA7103B0070F49A /* NSString+Emoji.m in Sources */,
+				AE0C329B1EAF31300083652C /* HHSpecial.m in Sources */,
 				AEFAFD501E963F9E008230FF /* AFURLConnectionOperation.m in Sources */,
 				AEFAFD521E963F9E008230FF /* AFURLResponseSerialization.m in Sources */,
 				AEAA7F831E990060003EC9DF /* MJType.m in Sources */,
@@ -1156,6 +1199,7 @@
 				AEF1C84A1E97D0EB0072831F /* NSData+ImageContentType.m in Sources */,
 				AEAA7F851E990060003EC9DF /* NSObject+MJCoding.m in Sources */,
 				AEF884E51E973028002E0CED /* HHOAuthVC.m in Sources */,
+				AE0C32951EAEE89F0083652C /* HHTextPart.m in Sources */,
 				AEF8FF5E1E9F640700366C9E /* HHComposeToolbar.m in Sources */,
 				AEBBE6B41E939800004454C6 /* main.m in Sources */,
 				AE190BB01EA0AF9400D42A02 /* HHEmotionTabBar.m in Sources */,

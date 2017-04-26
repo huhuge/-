@@ -12,6 +12,7 @@
 
 #import "HHEmotionTool.h"
 #import "HHEmotion.h"
+#import "MJExtension.h"
 
 
 @implementation HHEmotionTool
@@ -26,6 +27,27 @@ static NSMutableArray *_recentEmotions;
     }
 
 }
+
+
+
++ (HHEmotion *)emotionWithChs:(NSString *)chs{
+    NSArray *defaults = [self defaultEmotions];
+    for (HHEmotion *emotion in defaults) {
+        if ([emotion.chs isEqualToString:chs]) {
+            return emotion;
+        }
+    }
+    
+    NSArray *lxh = [self lxhEmotions];
+    for (HHEmotion *emotion in lxh) {
+        if ([emotion.chs isEqualToString:chs]) {
+            return emotion;
+        }
+    }
+    
+    return nil;
+}
+
 
 /** 存入数组 */
 + (void)addRecentEmotion:(HHEmotion *)emotion{
@@ -51,9 +73,36 @@ static NSMutableArray *_recentEmotions;
 
 
 /** 返回装置HHEmotion模型的数组 */
+
+static NSArray *_emojiEmotions, *_defaultEmotions, *_lxhEmotions;
+
 + (NSArray *)recentEmotions{
     
     return _recentEmotions;
+}
+
++ (NSArray *)defaultEmotions{
+    if (!_defaultEmotions) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"EmotionIcons/default/info.plist" ofType:nil];
+        _defaultEmotions = [HHEmotion objectArrayWithKeyValuesArray:[NSArray arrayWithContentsOfFile:path]];
+    }
+    return _defaultEmotions;
+
+}
+
++ (NSArray *)emojiEmotions{
+    if (!_emojiEmotions) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"EmotionIcons/emoji/info.plist" ofType:nil];
+        _emojiEmotions = [HHEmotion objectArrayWithKeyValuesArray:[NSArray arrayWithContentsOfFile:path]];
+    }    return _emojiEmotions;
+
+}
+
++ (NSArray *)lxhEmotions{
+    if (!_lxhEmotions) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"EmotionIcons/lxh/info.plist" ofType:nil];
+        _lxhEmotions = [HHEmotion objectArrayWithKeyValuesArray:[NSArray arrayWithContentsOfFile:path]];
+    }    return _lxhEmotions;
 }
 
 @end

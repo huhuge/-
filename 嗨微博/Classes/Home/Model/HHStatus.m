@@ -10,11 +10,118 @@
 #import "HHUser.h"
 #import "MJExtension.h"
 #import "HHPhoto.h"
+#import "RegexKitLite.h"
+#import "HHUser.h"
+#import "HHTextPart.h"
+#import "HHEmotion.h"
+#import "HHEmotionTool.h"
+#import "HHSpecial.h"
 
 @implementation HHStatus
 
 - (NSDictionary *)objectClassInArray{
     return @{@"pic_urls" : [HHPhoto class]};
+}
+
+
+- (NSAttributedString *)attributedTextWithText:(NSString *)text{
+    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] init];
+    
+    NSString *emotionPattern = @"\\[[a-zA-Z\\u4e00-\\u9fa5]+\\]"; // 表情规则
+    NSString *atPattern = @"@[0-9a-zA-Z\\u4e00-\\u9fa5-_]+";  // @规则
+    NSString *topicPattern = @"#[0-9a-zA-Z\\u4e00-\\u9fa5]+#";  // 话题规则
+    NSString *urlPattern = @"\\b(([\\w-]+://?|www[.])[^\\s()<>]+(?:\\([\\w\\d]+\\)|([^[:punct:]\\s]|/)))"; // 链接规则
+    NSString *pattern = [NSString stringWithFormat:@"%@|%@|%@|%@",emotionPattern,atPattern,topicPattern,urlPattern];
+    
+    // 遍历特殊字符串
+    NSMutableArray *parts = [NSMutableArray array];
+    
+    [text enumerateStringsMatchedByRegex:pattern usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+        
+        if ((*capturedRanges).length == 0) return ;
+        HHTextPart *part = [[HHTextPart alloc] init];
+        part.special = YES;
+        part.text = *capturedStrings;
+        part.emotion = [part.text hasPrefix:@"["] && [part.text hasSuffix:@"]"];
+        part.range = *capturedRanges;
+        [parts addObject:part];
+    }];
+    
+    // 遍历所有非特殊字符
+    [text enumerateStringsSeparatedByRegex:pattern usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+        if ((*capturedRanges).length == 0) return ;
+
+        HHTextPart *part = [[HHTextPart alloc] init];
+        part.text = *capturedStrings;
+        part.range = *capturedRanges;
+        [parts addObject:part];
+
+    }];
+    
+    
+    
+    // 排序
+    [parts sortUsingComparator:^NSComparisonResult(HHTextPart *part1, HHTextPart *part2) {
+//        NSOrderedAscending = -1L, NSOrderedSame, NSOrderedDescending
+        if (part1.range.location > part2.range.location) {
+            return NSOrderedDescending;
+        }
+        return NSOrderedAscending;
+        
+    }];
+    
+    UIFont *font = [UIFont systemFontOfSize:15];
+    NSMutableArray *specials = [NSMutableArray array];
+    // 按顺序拼接所有内容
+    for (HHTextPart *part in parts) {
+        NSAttributedString *substr = nil;
+        if (part.isEmotion) { // 表情
+            NSTextAttachment *attch = [[NSTextAttachment alloc] init];
+            NSString *name = [HHEmotionTool emotionWithChs:part.text].png;
+            if (name) { //能找到图片
+                attch.image = [UIImage imageNamed:name];
+                attch.bounds = CGRectMake(0, -3, font.lineHeight, font.lineHeight);
+                substr = [NSAttributedString attributedStringWithAttachment:attch];
+            } else {
+                substr = [[NSAttributedString alloc] initWithString:part.text];
+            }
+            
+
+        } else if (part.special) { // 特殊文字
+            substr = [[NSAttributedString alloc] initWithString:part.text attributes:@{NSForegroundColorAttributeName:HHRGBColor(82, 126, 176)}];
+            // 创建特殊对象
+            HHSpecial *s = [[HHSpecial alloc] init];
+            s.text = part.text;
+
+            NSUInteger loc = attributedText.length;
+            NSUInteger len = part.text.length;
+            s.range = NSMakeRange(loc, len);
+            [specials addObject:s];
+            
+        } else { // 非特殊
+            substr = [[NSAttributedString alloc] initWithString:part.text];
+        }
+        [attributedText appendAttributedString:substr];
+    }
+    
+    [attributedText addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, attributedText.length)];
+    [attributedText addAttribute:@"specials" value:specials range:NSMakeRange(0, 1)];
+    return attributedText;
+}
+
+-(void)setText:(NSString *)text{
+    _text = text;
+    // 利用text生成attributedText
+   
+    self.attributedText = [self attributedTextWithText:text];
+}
+
+
+- (void)setRetweeted_status:(HHStatus *)retweeted_status{
+    _retweeted_status = retweeted_status;
+    NSString *retweetContent = [NSString stringWithFormat:@"@%@ : %@",retweeted_status.user.name,retweeted_status.text];
+
+    self.retweetedAttributedText = [self attributedTextWithText:retweetContent];
 }
 
 /**

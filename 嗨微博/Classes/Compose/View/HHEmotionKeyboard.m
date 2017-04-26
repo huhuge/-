@@ -10,7 +10,6 @@
 #import "HHEmotionTabBar.h"
 #import "HHEmotionListView.h"
 #import "HHEmotion.h"
-#import "MJExtension.h"
 #import "HHEmotionTool.h"
 
 @interface HHEmotionKeyboard()<HHEmotionTabBarDelegate>
@@ -45,9 +44,7 @@
 - (HHEmotionListView *)defaultListView{
     if (!_defaultListView) {
         self.defaultListView = [[HHEmotionListView alloc] init];
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"EmotionIcons/default/info.plist" ofType:nil];
-        self.defaultListView.emotions = [HHEmotion objectArrayWithKeyValuesArray:[NSArray arrayWithContentsOfFile:path]];
-
+        self.defaultListView.emotions = [HHEmotionTool defaultEmotions];
     }
     return _defaultListView;
 }
@@ -55,9 +52,7 @@
 - (HHEmotionListView *)emojiListView{
     if (!_emojiListView) {
         self.emojiListView = [[HHEmotionListView alloc] init];
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"EmotionIcons/emoji/info.plist" ofType:nil];
-        self.emojiListView.emotions = [HHEmotion objectArrayWithKeyValuesArray:[NSArray arrayWithContentsOfFile:path]];
-        
+        self.emojiListView.emotions = [HHEmotionTool emojiEmotions];
     }
     return _emojiListView;
 }
@@ -65,9 +60,7 @@
 - (HHEmotionListView *)lxhListView{
     if (!_lxhListView) {
         self.lxhListView = [[HHEmotionListView alloc] init];
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"EmotionIcons/lxh/info.plist" ofType:nil];
-        self.lxhListView.emotions = [HHEmotion objectArrayWithKeyValuesArray:[NSArray arrayWithContentsOfFile:path]];
-        
+        self.lxhListView.emotions = [HHEmotionTool lxhEmotions];
     }
     return _lxhListView;
 }

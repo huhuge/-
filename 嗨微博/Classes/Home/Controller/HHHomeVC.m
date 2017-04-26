@@ -244,7 +244,7 @@
  *  加载更多的微博数据
  */
 - (void)loadMoreStatus
-{    
+{
     // 2.拼接请求参数
     HHAccount *account = [HHAccountTool account];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -354,6 +354,10 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     HHStatusFrame *frame = self.statusFrames[indexPath.row];
     return frame.cellHeight;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    HLog(@"%ld",indexPath.row);
 }
 
 
