@@ -194,8 +194,10 @@
         range.location = [source rangeOfString:@">"].location + 1;
         range.length = [source rangeOfString:@"</"].location - range.location;
         _source = [NSString stringWithFormat:@"来自%@", [source substringWithRange:range]];
+    } else { // 没有来源不做任何处理
+//        _source = @"来自新浪微博";
     }
-    //没有来源不做任何处理
+    
 }
 
 @end

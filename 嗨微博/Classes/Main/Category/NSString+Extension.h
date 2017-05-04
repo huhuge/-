@@ -14,4 +14,7 @@
 - (CGSize)stringSizeWithFont:(UIFont *)font maxWidth:(CGFloat)maxWidth;
 - (CGSize)stringSizeWithFont:(UIFont *)font;
 
+- (NSInteger)fileSize;
+
+
 @end

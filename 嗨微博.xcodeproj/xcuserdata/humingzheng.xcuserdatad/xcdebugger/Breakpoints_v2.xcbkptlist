@@ -36,7 +36,7 @@
                   moduleName = "&#x55e8;&#x5fae;&#x535a;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/humingzheng/Documents/%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/%E5%97%A8%E5%BE%AE%E5%8D%9A/%E5%97%A8%E5%BE%AE%E5%8D%9A/Classes/Compose/Controller/HHComposeVC.m"
-                  timestampString = "514889325.612784"
+                  timestampString = "515487435.544968"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "266"
@@ -51,7 +51,7 @@
                   moduleName = "&#x55e8;&#x5fae;&#x535a;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/humingzheng/Documents/%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/%E5%97%A8%E5%BE%AE%E5%8D%9A/%E5%97%A8%E5%BE%AE%E5%8D%9A/Classes/Compose/Controller/HHComposeVC.m"
-                  timestampString = "514889325.615889"
+                  timestampString = "515487435.547845"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "267"
@@ -74,6 +74,86 @@
             startingLineNumber = "269"
             endingLineNumber = "269"
             landmarkName = "-sendWithoutImage"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x55e8;&#x5fae;&#x535a;/Classes/Home/Controller/HHHomeVC.m"
+            timestampString = "515407580.816428"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
+            landmarkName = "-loadMoreStatus"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[HHHomeVC loadMoreStatus]"
+                  moduleName = "&#x55e8;&#x5fae;&#x535a;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/humingzheng/Documents/%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/%E5%97%A8%E5%BE%AE%E5%8D%9A/%E5%97%A8%E5%BE%AE%E5%8D%9A/Classes/Home/Controller/HHHomeVC.m"
+                  timestampString = "515487435.558587"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "284"
+                  endingLineNumber = "284"
+                  offsetFromSymbolStart = "841">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__26-[HHHomeVC loadMoreStatus]_block_invoke.247"
+                  moduleName = "&#x55e8;&#x5fae;&#x535a;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/humingzheng/Documents/%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/%E5%97%A8%E5%BE%AE%E5%8D%9A/%E5%97%A8%E5%BE%AE%E5%8D%9A/Classes/Home/Controller/HHHomeVC.m"
+                  timestampString = "515487435.560871"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "284"
+                  endingLineNumber = "284"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x55e8;&#x5fae;&#x535a;/Classes/Home/Controller/HHHomeVC.m"
+            timestampString = "515407624.809333"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "-loadMoreStatus"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x55e8;&#x5fae;&#x535a;/Classes/Home/Controller/HHHomeVC.m"
+            timestampString = "515407704.31752"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "-loadMoreStatus"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -19,6 +19,8 @@
 #import "HHLoadMoreFooter.h"
 #import "HHStatusFrame.h"
 #import "HHHtttpTool.h"
+#import "MJRefresh.h"
+#import "HHStatusTool.h"
 
 @interface HHHomeVC ()<HHDropdownMenuDelegate,UIScrollViewDelegate>
 /**
@@ -98,20 +100,22 @@
 
 #pragma mark ------上拉加载------
 - (void)setupUpRefresh{
-    HHLoadMoreFooter *footer = [HHLoadMoreFooter footer];
-    footer.hidden = YES;
-    self.tableView.tableFooterView = footer;
+    ///上拉刷新
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreStatus)];
+    [self.tableView.mj_header beginRefreshing];
+
     
 }
 
 
 #pragma mark ------下拉刷新------
 - (void)setupDownRefresh{
-    UIRefreshControl *control = [[UIRefreshControl alloc] init];
-    [control addTarget:self action:@selector(loadNewStatus:) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:control];
-    [control beginRefreshing];
-    [self loadNewStatus:control];
+    ///下拉刷新
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewStatus)];
+    header.automaticallyChangeAlpha = YES;
+    header.lastUpdatedTimeLabel.hidden = YES;
+    self.tableView.mj_header = header;
+    [self.tableView.mj_header beginRefreshing];
 }
 
 
@@ -164,39 +168,15 @@
 }
 
 
+
 /**
  *  UIRefreshControl进入刷新状态：加载最新的数据
  */
-- (void)loadNewStatus:(UIRefreshControl *)control
+- (void)loadNewStatus
 {
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        NSDictionary *responseObject = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"fakeStatus" ofType:@"plist"]];
-//        // 将 "微博字典"数组 转为 "微博模型"数组
-//        NSArray *newStatuses = [HHStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
-//        
-//        // 将 HWStatus数组 转为 HWStatusFrame数组
-//        NSArray *newFrames = [self statusFramesWithStatus:newStatuses];
-//        
-//        // 将最新的微博数据，添加到总数组的最前面
-//        NSRange range = NSMakeRange(0, newFrames.count);
-//        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:range];
-//        [self.statusFrames insertObjects:newFrames atIndexes:set];
-//        
-//        // 刷新表格
-//        [self.tableView reloadData];
-//        
-//        // 结束刷新
-//        [control endRefreshing];
-//        
-//        // 显示最新微博的数量
-//        [self showNewStatusCount:newStatuses.count];
-//    });
-//    
-//    return;
     
-    // 1.请求管理者
     
-    // 2.拼接请求参数
+    // 1.拼接请求参数
     HHAccount *account = [HHAccountTool account];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = account.access_token;
@@ -207,11 +187,11 @@
         // 若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0
         params[@"since_id"] = firstStatusF.status.idstr;
     }
-    
-    // 3.发送请求
-    [HHHtttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id json) {
+    //定义一个block处理返回的字典数据
+    void (^dealingResult)(NSArray *) = ^(NSArray *statuses){
         // 将 "微博字典"数组 转为 "微博模型"数组
-        NSArray *newStatuses = [HHStatus objectArrayWithKeyValuesArray:json[@"statuses"]];
+        NSArray *newStatuses = [HHStatus objectArrayWithKeyValuesArray:statuses];
+        
         
         // 将 HWStatus数组 转为 HWStatusFrame数组
         NSArray *newFrames = [self statusFramesWithStatus:newStatuses];
@@ -224,18 +204,33 @@
         // 刷新表格
         
         // 结束刷新
-        [control endRefreshing];
+        [self.tableView.mj_header endRefreshing];
         
         // 显示最新微博的数量
-        [self showNewStatusCount:newStatuses.count];
+        [self showNewStatusCount:statuses.count];
         
         [self.tableView reloadData];
 
-    } failure:^(NSError *error) {
-        // 结束刷新刷新
-        [control endRefreshing];
-
-    }];
+    };
+    
+    // 先尝试从数据库中加载微博数据
+    NSArray *statuses = [HHStatusTool statusesWithParams:params];
+    if (statuses.count) { // 有缓存
+        dealingResult(statuses);
+    } else {
+        // 2.发送请求
+        [HHHtttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id json) {
+            // 数据缓存
+            [HHStatusTool saveStatuses:json[@"statuses"]];
+            
+             dealingResult(json[@"statuses"]);
+            
+        } failure:^(NSError *error) {
+            // 结束刷新刷新
+            [self.tableView.mj_header endRefreshing];
+            
+        }];
+    }
 }
 
 
@@ -245,7 +240,7 @@
  */
 - (void)loadMoreStatus
 {
-    // 2.拼接请求参数
+    // 1.拼接请求参数
     HHAccount *account = [HHAccountTool account];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = account.access_token;
@@ -258,9 +253,10 @@
         long long maxId = lastStatusF.status.idstr.longLongValue - 1;
         params[@"max_id"] = @(maxId);
     }
-    [HHHtttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id json) {
+    //处理字典数据
+    void (^dealingResult)(NSArray *) = ^(NSArray *statuses){
         // 将 "微博字典"数组 转为 "微博模型"数组
-        NSArray *newStatuses = [HHStatus objectArrayWithKeyValuesArray:json[@"statuses"]];
+        NSArray *newStatuses = [HHStatus objectArrayWithKeyValuesArray:statuses];
         
         // 将 HWStatus数组 转为 HWStatusFrame数组
         NSArray *newFrames = [self statusFramesWithStatus:newStatuses];
@@ -272,14 +268,31 @@
         [self.tableView reloadData];
         
         // 结束刷新(隐藏footer)
-        self.tableView.tableFooterView.hidden = YES;
+        [self.tableView.mj_footer endRefreshing];
+        
+    };
 
-    } failure:^(NSError *error) {
-        // 结束刷新
-        self.tableView.tableFooterView.hidden = YES;
-
-    }];
     
+    // 2.加载沙盒中的数据
+    NSArray *statuses = [HHStatusTool statusesWithParams:params];
+    if (statuses.count) {
+        
+        dealingResult(statuses);
+        
+    } else {
+        // 3.发送请求
+        [HHHtttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id json) {
+            
+            // 数据缓存
+            [HHStatusTool saveStatuses:json[@"statuses"]];
+
+            dealingResult(json[@"statuses"]);
+        } failure:^(NSError *error) {
+            // 结束刷新
+            [self.tableView.mj_footer endRefreshing];
+            
+        }];
+    }
 }
 
 
